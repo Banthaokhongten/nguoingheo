@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bản Thảo Không Tên</title>
+  
+  <!-- Font chữ tối giản & thẩm mỹ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0b132b;
+      --card-bg: rgba(28, 37, 65, 0.65);
+      --border-color: rgba(144, 224, 239, 0.2);
+      --accent-navy: #1c2541;
+      --accent-glow: #48cae4;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(28, 37, 65, 0.8) 0, transparent 50%), 
+        radial-gradient(at 100% 100%, rgba(11, 19, 43, 1) 0, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(72, 202, 228, 0.08) 0, transparent 70%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 16px;
+      color: var(--text-main);
+    }
+
+    /* Khung chính tối giản (Clean & Basic) */
+    .container {
+      width: 100%;
+      max-width: 390px;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 36px 20px 24px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Avatar Char */
+    .avatar-box {
+      position: relative;
+      width: 95px;
+      height: 95px;
+      margin: 0 auto 16px;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(144, 224, 239, 0.4);
+      padding: 3px;
+      box-shadow: 0 0 15px rgba(72, 202, 228, 0.15);
+      transition: transform 0.25s ease;
+      cursor: pointer;
+    }
+
+    .avatar-img:active {
+      transform: scale(0.95);
+    }
+
+    /* Tiêu đề & Subtitle */
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      display: inline-block;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #90e0ef;
+      background: rgba(72, 202, 228, 0.1);
+      border: 1px solid rgba(72, 202, 228, 0.2);
+      padding: 3px 12px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      letter-spacing: 0.2px;
+    }
+
+    /* Danh sách link basic, gọn mắt */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 18px;
+      background: rgba(11, 19, 43, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .link-item:hover, .link-item:active {
+      background: rgba(72, 202, 228, 0.12);
+      border-color: rgba(144, 224, 239, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .link-icon {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .arrow {
+      color: var(--text-sub);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    /* Tương tác nhỏ xinh */
+    .footer-action {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .star-btn {
+      background: transparent;
+      border: 1px solid rgba(144, 224, 239, 0.3);
+      color: #90e0ef;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .star-btn:active {
+      background: rgba(72, 202, 228, 0.15);
+    }
+
+    .quote-txt {
+      font-size: 11.5px;
+      color: var(--text-sub);
+      margin-top: 12px;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- ẢNH CHAR (Sau này cưng thay link ảnh vào src bên dưới nha) -->
+    <div class="avatar-box">
+      <img 
+        class="avatar-img" 
+        src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=200&auto=format&fit=crop&q=80" 
+        alt="Char Avatar"
+        onclick="poke()"
+      >
+    </div>
+
+    <!-- TÊN VÀ GIỚI THIỆU -->
+    <h1>Bản Thảo Không Tên</h1>
+    <span class="subtitle">Bản Phác Thảo Không Tên ✧</span>
+
+    <!-- DANH SÁCH LINK (Đổi link trong href="" nhé) -->
+    <div class="links">
+      <a href="https://facebook.com" target="_blank" class="link-item">
+        <div class="link-left">
+          <span class="link-icon">📖</span>
+          <span>Thông tin / Hồ sơ Char</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+
+      <a href="https://facebook.com" target="_blank" class="link-item">
+        <div class="link-left">
+          <span class="link-icon">✉️</span>
+          <span>Facebook / Liên Hệ</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+
+      <a href="https://drive.google.com" target="_blank" class="link-item">
+        <div class="link-left">
+          <span class="link-icon">📁</span>
+          <span>Kho Tài Nguyên / Link Phụ</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+
+      <a href="https://discord.com" target="_blank" class="link-item">
+        <div class="link-left">
+          <span class="link-icon">🪐</span>
+          <span>Discord / Trạm Dừng</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+
+    <!-- PHẦN DƯỚI CÙNG -->
+    <div class="footer-action">
+      <button class="star-btn" onclick="addStar()">
+        <span>✦</span> Ghé thăm (<span id="starCount">0</span>)
+      </button>
+      <div class="quote-txt">"Những nét vẽ dang dở chưa thành tên."</div>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    function addStar() {
+      count++;
+      document.getElementById('starCount').innerText = count;
+    }
+
+    function poke() {
+      alert("✦ Chào mừng bạn đến với Bản Thảo Không Tên ✦");
+    }
+  </script>
+</body>
+</html>
